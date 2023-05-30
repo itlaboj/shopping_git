@@ -10,7 +10,18 @@
 <body>
 <h1>注文一覧</h1>
 <hr>
-商品コード：${code}<br>
-数量：${quantity}<br>
+<table border="1">
+<tr>
+	<th>商品コード</th><th>商品名</th><th>単価</th><th>数量</th>
+</tr>
+<c:forEach var="record" items="${details}">
+	<tr>
+		<td>${record.item.code}</td>
+		<td>${record.item.name}</td>
+		<td>${record.item.price}</td>
+		<td>${record.quantity}</td>
+	</tr>
+</c:forEach>
+</table>
 </body>
 </html>
