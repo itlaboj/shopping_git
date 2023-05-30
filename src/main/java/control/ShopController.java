@@ -11,6 +11,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import bean.IBean;
 import bean.ItemListBean;
+import bean.OrderDeleteBean;
 import bean.OrderListBean;
 
 /**
@@ -54,7 +55,7 @@ public class ShopController extends HttpServlet {
 			} else if (action.equals("ORDER_DETAIL")) { //商品選択時の処理
 				bean = new OrderListBean();
 			} else if (action.equals("ORDER_DELETE")) { //商品削除時の処理
-				//bean = new OrderDeleteBean();
+				bean = new OrderDeleteBean();
 			}
 
 			page = bean.execute(request);

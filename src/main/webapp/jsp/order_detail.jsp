@@ -16,7 +16,8 @@
 </tr>
 <c:forEach var="record" items="${details}" varStatus="status">
 	<form action="/shopping_git/control" method="get">
-		<input type="hidden" name="number" value="${status.index}">
+		<input type="hidden" name="ACTION" value="ORDER_DELETE">
+		<input type="hidden" name="NUMBER" value="${status.index}">
 		<tr>
 			<td>${record.item.code}</td>
 			<td>${record.item.name}</td>
