@@ -12,16 +12,27 @@
 <hr>
 <table border="1">
 <tr>
-	<th>商品コード</th><th>商品名</th><th>単価</th><th>数量</th>
+	<th>商品コード</th><th>商品名</th><th>単価</th><th>数量</th><th>小計</th><th></th>
 </tr>
-<c:forEach var="record" items="${details}">
-	<tr>
-		<td>${record.item.code}</td>
-		<td>${record.item.name}</td>
-		<td>${record.item.price}</td>
-		<td>${record.quantity}</td>
-	</tr>
+<c:forEach var="record" items="${details}" varStatus="status">
+	<form action="/shopping_git/control" method="get">
+		<input type="hidden" name="number" value="${status.index}">
+		<tr>
+			<td>${record.item.code}</td>
+			<td>${record.item.name}</td>
+			<td>${record.item.price}</td>
+			<td>${record.quantity}</td>
+			<td>${record.item.price * record.quantity}</td>
+			<td><input type="submit" value="削除"></td>
+		</tr>
+	</form>
 </c:forEach>
+<tr>
+	<td colspan="5">合計</td><td>${total}</td>
+</tr>
 </table>
+
+<a href="/shopping_git/control?ACTION=ITEM_LIST">商品一覧へ</a>
+
 </body>
 </html>

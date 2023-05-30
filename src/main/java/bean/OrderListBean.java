@@ -42,7 +42,12 @@ public class OrderListBean implements IBean {
 		//リクエスト・オブジェクトにカートの注文情報を取得
 		List<OrderDetail> details = cart.getOrderDetails();
 		
+		//注文情報の合計の値段を取得
+		int total = cart.getTotal();
+		
+		//リクエスト・オブジェクトに表示情報を設定
 		request.setAttribute("details", details);
+		request.setAttribute("total", total);
 
 		//フォワード先のページを返す
 		return "/jsp/order_detail.jsp";

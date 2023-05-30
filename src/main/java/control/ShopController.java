@@ -53,6 +53,8 @@ public class ShopController extends HttpServlet {
 				bean = new ItemListBean();
 			} else if (action.equals("ORDER_DETAIL")) { //商品選択時の処理
 				bean = new OrderListBean();
+			} else if (action.equals("ORDER_DELETE")) { //商品削除時の処理
+				//bean = new OrderDeleteBean();
 			}
 
 			page = bean.execute(request);
