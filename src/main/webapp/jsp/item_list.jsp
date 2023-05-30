@@ -18,17 +18,22 @@
 
 <c:forEach var="record" items="${LIST}">
 	<tr>
-		<td>${record.code}</td>
-		<td>${record.name}</td>
-		<td>${record.price}</td>
-		<td>
-			<select name="QUANTITY">
-				<c:forEach var="i" begin="1" end="10">
-					<option value="${i}">${i}</option>
-				</c:forEach>
-			</select>
-		</td>
-		<td>ボタン</td>
+		<form action="/shopping_git/control" method="get">
+			<input type="hidden" name="ACTION" value="ORDER_DETAIL">
+			<input type="hidden" name="CODE" value="${record.code}">
+			
+			<td>${record.code}</td>
+			<td>${record.name}</td>
+			<td>${record.price}</td>
+			<td>
+				<select name="QUANTITY">
+					<c:forEach var="i" begin="1" end="10">
+						<option value="${i}">${i}</option>
+					</c:forEach>
+				</select>
+			</td>
+			<td><input type="submit" value="カートに追加"></td>
+		</form>
 	</tr>
 </c:forEach>
 

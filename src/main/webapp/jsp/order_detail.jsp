@@ -10,6 +10,7 @@
 <body>
 <h1>注文一覧</h1>
 <hr>
-
+商品コード：${code}<br>
+数量：${quantity}<br>
 </body>
 </html>
