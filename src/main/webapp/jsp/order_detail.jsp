@@ -10,6 +10,11 @@
 <body>
 <h1>注文一覧</h1>
 <hr>
+<c:if test="${empty details}">
+購入する商品がありません。<br>
+</c:if>
+
+<c:if test="${not empty details}">
 <table border="1">
 <tr>
 	<th>商品コード</th><th>商品名</th><th>単価</th><th>数量</th><th>小計</th><th></th>
@@ -32,6 +37,7 @@
 	<td colspan="5">合計</td><td>${total}</td>
 </tr>
 </table>
+</c:if>
 
 <a href="/shopping_git/control?ACTION=ITEM_LIST">商品一覧へ</a>
 
