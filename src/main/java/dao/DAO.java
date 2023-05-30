@@ -6,7 +6,7 @@ import java.sql.DriverManager;
 public class DAO {
 	private static final String URL = "jdbc:postgresql:shop_db";
 	private static final String USER = "postgres";
-	private static final String PASS = "postgres";
+	private static final String PASS = "himitu";
 	
 	protected Connection connect() throws Exception {
 
