@@ -9,7 +9,26 @@ public class Cart {
 	
 	//カートに追加
 	public void addCart(OrderDetail orderDetail) {
-		orderDetails.add(orderDetail);
+		Item item1 = orderDetail.getItem();
+		int quantity1 = orderDetail.getQuantity();
+		
+		OrderDetail o = null;
+		
+		for (OrderDetail order : orderDetails) {
+			Item item2 = order.getItem();
+			int quantity2 = order.getQuantity();
+			
+			if (item1.getCode() == item2.getCode()) {
+				o = order;
+				break;
+			}
+		}
+		
+		if (o == null) {
+			orderDetails.add(orderDetail);
+		} else {
+			o.setQuantity(quantity1 + o.getQuantity());
+		}
 	}
 	
 	//カートから消去
