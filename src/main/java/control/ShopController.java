@@ -9,6 +9,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import bean.CustomerInputBean;
 import bean.IBean;
 import bean.ItemListBean;
 import bean.OrderDeleteBean;
@@ -56,6 +57,8 @@ public class ShopController extends HttpServlet {
 				bean = new OrderListBean();
 			} else if (action.equals("ORDER_DELETE")) { //商品削除時の処理
 				bean = new OrderDeleteBean();
+			} else if (action.equals("CUSTOMER_INPUT")) { //顧客情報入力画面表示の処理
+				bean = new CustomerInputBean();
 			}
 
 			page = bean.execute(request);

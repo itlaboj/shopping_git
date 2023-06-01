@@ -18,7 +18,7 @@ public class ItemListBean implements IBean {
 		
 		//リクエスト・オブジェクトに全商品情報を設定
 		request.setAttribute("LIST", list);
-
+		
 		//フォワード先のページを返す
 		return "/jsp/item_list.jsp";
 	}
