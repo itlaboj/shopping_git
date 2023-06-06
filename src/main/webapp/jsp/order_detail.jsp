@@ -39,8 +39,8 @@
 </table>
 </c:if>
 
-<a href="/shopping_git/control?ACTION=CUSTOMER_INPUT&FRUIT=apple">りんご</a>
-<a href="/shopping_git/control?ACTION=CUSTOMER_INPUT&FRUIT=orange">みかん</a>
+<a href="/shopping_git/control?ACTION=CUSTOMER_INPUT#apple">りんご</a>
+<a href="/shopping_git/control?ACTION=CUSTOMER_INPUT#orange">みかん</a>
 <br>
 <a href="/shopping_git/control?ACTION=ITEM_LIST">商品一覧へ</a>
 
